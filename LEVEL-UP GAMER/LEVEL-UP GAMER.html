@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up Gamer - Tienda Online</title>
+    <link rel="stylesheet" href="estilo_pagina.css">
+</head>
+<body>
+
+    <header class="cabezado-principal">
+        <div class="contenedor-logo">
+            <h1 class="logo">LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <!-- Enlace corregido con el nombre exacto de tu archivo HTML -->
+                <li><a href="LEVEL-UP GAMER.html" class="active">Home</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="#login" class="btn-secondary">Iniciar Sesión</a>
+            <a href="#registro" class="btn-primary">Registrarse</a>
+            <div class="cart-icon">
+                🛒 <span id="cart-count">(0)</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Desafía tus límites con Level-Up Gamer</h2>
+            <p>Conviértete en el héroe de tu propia historia. Consolas, periféricos, sillas ergonómicas y mucho más con despacho a todo Chile.</p>
+            <a href="#productos" class="btn-primary btn-large">Ver Productos</a>
+        </div>
+        <div class="hero-image">
+            <img src="incertar imagen" alt="Setup Gamer de Level-Up">
+        </div>
+    </section>
+
+    <section id="productos" class="products-section">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="incertar imagen" alt="PlayStation 5">
+                <div class="product-info">
+                    <h3>PlayStation 5</h3>
+                    <p class="category">Consolas</p>
+                    <p class="price">$549.990</p>
+                    <button class="btn-primary add-to-cart">Añadir al Carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="incertar imagen" alt="PC Gamer ASUS ROG Strix">
+                <div class="product-info">
+                    <h3>PC Gamer ASUS ROG Strix</h3>
+                    <p class="category">Computadores</p>
+                    <p class="price">$1.299.990</p>
+                    <button class="btn-primary add-to-cart">Añadir al Carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="incertar imagen" alt="Silla Gamer Secretlab Titan">
+                <div class="product-info">
+                    <h3>Silla Gamer Secretlab Titan</h3>
+                    <p class="category">Sillas Gamer</p>
+                    <p class="price">$349.990</p>
+                    <button class="btn-primary add-to-cart">Añadir al Carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="incertar imagen" alt="Mouse Logitech G502 HERO">
+                <div class="product-info">
+                    <h3>Mouse Logitech G502 HERO</h3>
+                    <p class="category">Periféricos</p>
+                    <p class="price">$49.990</p>
+                    <button class="btn-primary add-to-cart">Añadir al Carrito</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="registro" class="form-section">
+        <h2>Registro de Usuario</h2>
+        <form class="forma-estilo" id="register-form">
+            <div class="del-grupo">
+                <label for="run">RUN (Sin puntos ni guión):</label>
+                <input type="text" id="run" name="run" placeholder="Ej: 19011022K" required minlength="7" maxlength="9">
+            </div>
+
+            <div class="del-grupo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required maxlength="50">
+            </div>
+
+            <div class="del-grupo">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required maxlength="100">
+            </div>
+
+            <div class="del-grupo">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@duoc.cl" required maxlength="100">
+            </div>
+
+            <div class="del-grupo">
+                <label for="region">Región:</label>
+                <select id="region" name="region" required>
+                    <option value="">-- Selecciona Región --</option>
+                    <option value="RM">Región Metropolitana</option>
+                    <option value="ARA">Región de la Araucanía</option>
+                    <option value="NUB">Región de Ñuble</option>
+                </select>
+            </div>
+
+            <div class="del-grupo">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Calle, número, depto" required maxlength="300">
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">Registrarme</button>
+        </form>
+    </section>
+
+    <footer class="pagina-principal">
+        <div class="contenido-principal">
+            <div class="marca-principal">
+                <h3>LEVEL-UP GAMER</h3>
+                <p>Tu tienda de confianza para equipar tu setup al máximo nivel.</p>
+            </div>
+            <div class="links-principal">
+                <h4>Navegación</h4>
+                    <!-- Enlaces corregidos con el nombre exacto de tu archivo HTML -->
+                    <li><a href="LEVEL-UP GAMER.html">Home</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="informe-principal">
+                <h4>Suscríbete al Boletín</h4>
+                <div class="aporte-informe">
+                    <input type="email" placeholder="Ingresa tu email">
+                    <button class="btn-primary">Suscribir</button>
+                </div>
+            </div>
+        </div>
+        <div class="boton-principal">
+            <p>&copy; 2026 Level-Up Gamer - Evaluación Parcial 1 - Duoc UC</p>
+        </div>
+    </footer>
+
+</body>
+</html>
