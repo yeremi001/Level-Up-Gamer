@@ -1,0 +1,159 @@
+/* Variables Globales de Tema Gamer */
+:root {
+    --bg-dark: #0b0e14;
+    --card-bg: #151922;
+    --neon-green: #39ff14;
+    --electric-blue: #1e90ff;
+    --text-muted: #a0a6b5;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Colores de Texto y Badges */
+.text-neon-green {
+    color: var(--neon-green) !important;
+}
+
+.text-electric {
+    color: var(--electric-blue) !important;
+}
+
+.bg-gamer-dark {
+    background-color: #0d1117 !important;
+}
+
+.bg-blue {
+    background-color: var(--electric-blue) !important;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+}
+
+.logo-brand {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.logo-brand span {
+    color: var(--neon-green);
+}
+
+/* Estilos de Tarjetas Gamer */
+.gamer-card {
+    background-color: var(--card-bg);
+    border: 1px solid #232936;
+    border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.gamer-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--neon-green);
+}
+
+.border-electric {
+    border-color: var(--electric-blue) !important;
+}
+
+/* Imagen del Logo en la esquina superior derecha */
+.nav-logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+    border-color: var(--electric-blue);
+}
+
+/* Botones con Efecto Neón */
+.btn-neon-primary {
+    background-color: var(--neon-green);
+    color: #000000;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-neon-primary:hover {
+    background-color: #32d812;
+    color: #000000;
+    box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
+}
+
+.btn-electric {
+    background-color: var(--electric-blue);
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-electric:hover {
+    background-color: #187bcd;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(30, 144, 255, 0.6);
+}
+
+/* Formulario Gamer */
+.gamer-input {
+    background-color: #0b0e14;
+    border: 1px solid #232936;
+    color: #ffffff;
+}
+
+.gamer-input:focus {
+    background-color: #0b0e14;
+    border-color: var(--neon-green);
+    color: #ffffff;
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+}
+
+/* Precios */
+.product-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--neon-green);
+}
+
+/* Botón Flotante Soporte Técnico */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20ba5a;
+    color: #ffffff;
+}
+
+/* Pie de Página */
+.gamer-footer {
+    background-color: #06080c;
+    border-top: 1px solid #1a1f2c;
+}

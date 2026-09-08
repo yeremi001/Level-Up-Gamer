@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL-UP GAMER - Tienda y Comunidad Oficial</title>
+
+    <!-- Google Fonts CDN (Orbitron para titulos y Roboto para texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS CDN (Mapa interactivo de eventos) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="estilo_pagina.css">
+</head>
+<body>
+
+    <!-- Bootstrap RESPONSIVE y Navbar de Navegacion -->
+    <nav class="navbar navbar-expand-lg bg-gamer-dark sticky-top border-bottom border-dark">
+        <div class="container">
+            <a class="navbar-brand logo-brand fw-bold" href="#">LEVEL-UP <span>GAMER</span></a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navGamerMenu">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navGamerMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="#productos">Catalogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recomendaciones">Recomendados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog y Guias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#eventos">Eventos y Puntos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#comunidad">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#perfil">Mi Perfil</a></li>
+                </ul>
+                
+                <!-- Contenedor superior derecho: Puntos, Carrito e Imagen de Logo Level-Up -->
+                <div class="d-flex align-items-center gap-2">
+                    <div class="text-light me-2 small d-none d-sm-block">
+                        Puntos LevelUp: <span id="user-points" class="badge bg-blue">0 pts</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-sm btn-outline-light position-relative me-2" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        Carrito
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </button>
+
+                    <!-- Imagen de Logo Level-Up arriba a la derecha -->
+                    <a href="#perfil" class="navbar-logo-right" title="Mi Perfil Gamer">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=100&q=80" alt="Logo Level-Up Gamer" class="nav-logo-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero seccion -->
+    <section class="hero-section py-5">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4">
+                <div class="col-12 col-md-6">
+                    <h1 class="display-5 fw-bold hero-title mb-3">Desafia tus limites con Level-Up Gamer</h1>
+                    <p class="lead text-secondary mb-4">
+                        Conviertete en el heroe de tu propia historia y unete a nuestra comunidad. Explora, juega y gana con nosotros.
+                    </p>
+                    <a href="#productos" class="btn btn-neon-primary btn-lg px-4 me-2">Ver Catalogo</a>
+                    <a href="#registro" class="btn btn-electric btn-lg px-4">Registrate (20% Duoc)</a>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Setup Gamer Level-Up" class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalogo de los productos y Busqueda Avanzada -->
+    <section id="productos" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4 hero-title">Catalogo Oficial de Productos</h2>
+            
+            <!-- Filtros de busqueda por codigo/nombre y categoria -->
+            <div class="row g-3 mb-4 p-3 gamer-card">
+                <div class="col-12 col-md-6">
+                    <label class="form-label text-light small fw-bold">Buscar por Nombre o Codigo:</label>
+                    <input type="text" id="search-input" class="form-control gamer-input" placeholder="Ej: JM001, Catan, PS5...">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="form-label text-light small fw-bold">Filtrar por Categoria:</label>
+                    <select id="category-filter" class="form-select gamer-input">
+                        <option value="all">Todas las Categorias</option>
+                        <option value="Juegos de Mesa">Juegos de Mesa</option>
+                        <option value="Accesorios">Accesorios</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Computadores Gamers">Computadores Gamers</option>
+                        <option value="Sillas Gamers">Sillas Gamers</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Mousepad">Mousepad</option>
+                        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grilla dinamica de productos (Generada por JS) -->
+            <div class="row g-4" id="products-grid">
+                <!-- Tarjetas insertadas dinamicamente mediante script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recomendaciones Personalizadas -->
+    <section id="recomendaciones" class="py-5 bg-gamer-dark">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2 hero-title">Recomendaciones Personalizadas</h2>
+            <p class="text-center text-secondary mb-4">Sugerencias basadas en tus preferencias y tendencias de la comunidad.</p>
+            <div class="row g-4" id="recommended-grid">
+                <!-- Tarjetas de recomendacion dinamicas -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog y Contenido de la Comunidad Gamer -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4 hero-title">Blog, Consejos y Guias Gamer</h2>
+            <div class="row g-4">
+                <!-- Articulo 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 gamer-card text-white">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Guia Setup">
+                        <div class="card-body">
+                            <span class="badge bg-blue mb-2">Guia Tecnica</span>
+                            <h5 class="card-title fw-bold">Optimiza el flujo de aire de tu PC</h5>
+                            <p class="card-text text-secondary small">Aprende a posicionar los ventiladores para reducir temperaturas en sesiones intensas.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Articulo 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 gamer-card text-white">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Noticias eSports">
+                        <div class="card-body">
+                            <span class="badge bg-blue mb-2">Comunidad</span>
+                            <h5 class="card-title fw-bold">Torneo Nacional LevelUp 2026</h5>
+                            <p class="card-text text-secondary small">Conoce a los clasificados y como acumular Puntos LevelUp en sedes presenciales.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Articulo 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 gamer-card text-white">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Ergonomia">
+                        <div class="card-body">
+                            <span class="badge bg-blue mb-2">Ergonomia</span>
+                            <h5 class="card-title fw-bold">Postura y Confort para Gamers</h5>
+                            <p class="card-text text-secondary small">Ajusta tu silla ergonomica y monitor para evitar fatiga en partidas largas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo de Eventos Nacionales -->
+    <section id="eventos" class="py-5 bg-gamer-dark">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2 hero-title">Mapa de Eventos Gamers en Chile</h2>
+            <p class="text-center text-secondary mb-4">Asiste a nuestros eventos presenciales para sumar Puntos LevelUp canjeables.</p>
+            
+            <div class="gamer-card p-3">
+                <div id="events-map" style="height: 380px; border-radius: 8px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion de Impacto Comunitario -->
+    <section id="comunidad" class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold hero-title mb-3">Seccion de Impacto Comunitario</h2>
+            <p class="text-secondary mx-auto mb-4" style="max-width: 800px;">
+                En <strong>Level-Up Gamer</strong>, un porcentaje de cada compra financia torneos universitarios, apoya a desarrolladores locales de videojuegos en Chile y abastece talleres comunitarios de esports.
+            </p>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="gamer-card p-4">
+                        <h3 class="text-neon-green font-orbitron">+50</h3>
+                        <p class="text-secondary small mb-0">Torneos regionales patrocinados en todo Chile.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="gamer-card p-4">
+                        <h3 class="text-electric font-orbitron">20% OFF</h3>
+                        <p class="text-secondary small mb-0">Descuento vitalicio garantizado para la comunidad Duoc UC.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="gamer-card p-4">
+                        <h3 class="text-neon-green font-orbitron">LevelUp Pts</h3>
+                        <p class="text-secondary small mb-0">Recompensas directas por tu fidelidad y participacion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Registro de Usuario y Validacion -->
+    <section id="registro" class="py-5 bg-gamer-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="gamer-card p-4 p-md-5">
+                        <h2 class="text-center fw-bold hero-title mb-2">Registro de Usuario</h2>
+                        <p class="text-center text-secondary small mb-4">Registrate para acumular puntos. Correos @duoc.cl obtienen 20% de descuento automatico.</p>
+                        
+                        <form id="register-form">
+                            <div class="mb-3">
+                                <label for="run" class="form-label text-light">RUN (Sin puntos ni guion):</label>
+                                <input type="text" class="form-control gamer-input" id="run" name="run" placeholder="Ej: 19011022K" required minlength="7" maxlength="10">
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="nombre" class="form-label text-light">Nombre:</label>
+                                    <input type="text" class="form-control gamer-input" id="nombre" name="nombre" placeholder="Tu nombre" required maxlength="50">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="apellidos" class="form-label text-light">Apellidos:</label>
+                                    <input type="text" class="form-control gamer-input" id="apellidos" name="apellidos" placeholder="Tus apellidos" required maxlength="100">
+                                </div>
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="fechaNacimiento" class="form-label text-light">Fecha Nacimiento:</label>
+                                    <input type="date" class="form-control gamer-input" id="fechaNacimiento" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="correo" class="form-label text-light">Correo Electronico:</label>
+                                    <input type="email" class="form-control gamer-input" id="correo" name="correo" placeholder="ejemplo@duoc.cl" required maxlength="100">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="referralCode" class="form-label text-light">Codigo de Referido (Opcional):</label>
+                                <input type="text" class="form-control gamer-input" id="referralCode" placeholder="Ej: REF-LEVELUP">
+                            </div>
+
+                            <button type="submit" class="btn btn-neon-primary w-100 py-2">Registrarme</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestion del Perfil de Usuario y Gamificacion -->
+    <section id="perfil" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="gamer-card p-4 p-md-5">
+                        <h2 class="fw-bold hero-title mb-4">Mi Perfil Gamer</h2>
+                        <div class="row gy-4">
+                            <div class="col-12 col-md-6 border-end border-secondary">
+                                <h4 class="text-white mb-3 font-orbitron">Datos Personales</h4>
+                                <form id="profile-form">
+                                    <div class="mb-3">
+                                        <label class="form-label text-light">Nombre Completo:</label>
+                                        <input type="text" id="prof-name" class="form-control gamer-input" value="Usuario Gamer">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-light">Preferencias de Compra:</label>
+                                        <select id="prof-pref" class="form-select gamer-input">
+                                            <option value="Consolas">Consolas y Hardware</option>
+                                            <option value="Juegos de Mesa">Juegos de Mesa y Accesorios</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-electric w-100">Guardar Cambios</button>
+                                </form>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h4 class="text-white mb-3 font-orbitron">Programa de Gamificacion</h4>
+                                <p class="mb-1">Nivel Actual: <strong id="user-level" class="text-neon-green">Novato (Nivel 1)</strong></p>
+                                <p class="mb-3">Puntos Acumulados: <strong id="profile-points" class="text-neon-green">0 pts</strong></p>
+                                <label class="form-label text-light small">Tu Codigo para Referir Amigos:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control gamer-input" value="REF-GAMER-2026" readonly>
+                                    <button class="btn btn-electric" onclick="alert('Codigo copiado!')">Copiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boton de Chat de Soporte Tecnico via WhatsApp -->
+    <a href="https://wa.me/56912345678?text=Hola%20Servicio%20Tecnico%20Level-Up%20Gamer,%20necesito%20asistencia" target="_blank" class="whatsapp-btn" title="Contactar Servicio Tecnico">
+        Soporte Tecnico
+    </a>
+
+    <!-- Modal para Detalles del Producto, Origen y Resenas -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-black text-white border-electric">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold font-orbitron hero-title" id="modalProductTitle">Detalles del Producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-5 text-center">
+                            <img id="modalProductImg" src="" class="img-fluid rounded border border-secondary" alt="Producto">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <span id="modalProductCode" class="badge bg-blue mb-2">CODIGO</span>
+                            <p id="modalProductDesc" class="text-secondary small mb-3"></p>
+                            <div class="gamer-card p-3 mb-3">
+                                <h6 class="font-orbitron text-electric mb-1">Origen y Fabricacion</h6>
+                                <p id="modalProductOrigin" class="small text-secondary mb-0"></p>
+                            </div>
+                            <h5 class="product-price mb-3" id="modalProductPrice"></h5>
+                        </div>
+                    </div>
+                    <hr class="border-secondary">
+                    <h5 class="font-orbitron hero-title mb-3">Resenas y Calificaciones</h5>
+                    <div id="reviewsList" class="mb-3" style="max-height: 150px; overflow-y: auto;">
+                        <!-- Resenas dinamicas -->
+                    </div>
+                    <form id="add-review-form" class="gamer-card p-3">
+                        <h6 class="text-white small fw-bold mb-2">Dejar una Resena:</h6>
+                        <div class="row g-2 mb-2">
+                            <div class="col-12 col-md-4">
+                                <select id="reviewRating" class="form-select gamer-input form-select-sm" required>
+                                    <option value="5">5 / 5 Excelente</option>
+                                    <option value="4">4 / 5 Bueno</option>
+                                    <option value="3">3 / 5 Regular</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <input type="text" id="reviewComment" class="form-control gamer-input form-select-sm" placeholder="Escribe tu opinion sobre el producto..." required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-neon-primary btn-sm w-100">Publicar Resena</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal del Carrito de Compras -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-black text-white border-electric">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold font-orbitron hero-title">Carrito de Compras</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Codigo / Producto</th>
+                                    <th>Precio</th>
+                                    <th style="width: 100px;">Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body"></tbody>
+                        </table>
+                    </div>
+                    <div class="border-top border-secondary pt-3 mt-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-secondary">Subtotal:</span>
+                            <span id="cart-subtotal">$0 CLP</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1 text-success">
+                            <span>Descuento Duoc UC (20%):</span>
+                            <span id="cart-discount">-$0 CLP</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold fs-4 text-neon-green border-top border-secondary pt-2">
+                            <span>Total Final:</span>
+                            <span id="cart-total">$0 CLP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary btn-sm" id="clear-cart-btn">Vaciar Carrito</button>
+                    <button type="button" class="btn btn-neon-primary btn-sm" onclick="alert('Gracias por tu compra en Level-Up Gamer!')">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de la pagina -->
+    <footer class="gamer-footer py-4 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row gy-3">
+                <div class="col-12 col-md-6">
+                    <h5 class="logo-brand mb-2">LEVEL-UP <span>GAMER</span></h5>
+                    <p class="small text-secondary mb-0">Tu tienda de confianza para equipar tu setup al maximo nivel.</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-1">&copy; 2026 Level-Up Gamer - Evaluacion Parcial 1 - Duoc UC</p>
+                    <a href="#" class="text-secondary small text-decoration-none me-2">Terminos</a>
+                    <a href="#" class="text-secondary small text-decoration-none">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS CDN (Mapa interactivo) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- JS Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
