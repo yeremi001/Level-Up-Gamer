@@ -1,6 +1,6 @@
 /* Variables Globales de Tema Gamer */
 :root {
-    --bg-dark: #0b0e14;
+    --bg-dark: #000000;
     --card-bg: #151922;
     --neon-green: #39ff14;
     --electric-blue: #1e90ff;
@@ -156,4 +156,10 @@ body {
 .gamer-footer {
     background-color: #06080c;
     border-top: 1px solid #1a1f2c;
+}
+
+.logo-img {
+    height: 100px;         
+    width: auto;     
+    object-fit: contain;
 }

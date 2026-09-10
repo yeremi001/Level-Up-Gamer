@@ -20,7 +20,7 @@ const productosData = [
         nombre: "Carcassonne",
         categoria: "Juegos de Mesa",
         precio: 29990,
-        imagen: "https://images.unsplash.com/photo-1606168094336-48f205276929?auto=format&fit=crop&w=400&q=80",
+        imagen: "https://devirinvestments.s3.eu-west-1.amazonaws.com/img/catalog/product/8436017222593-1200-face3d-copy.jpg",
         descripcion: "Crea el mapa medieval loseta a loseta y controla caminos y fortalezas.",
         origen: "Importado de España. Diseñado por Klaus-Jürgen Wrede.",
         recomendado: false,
@@ -33,8 +33,8 @@ const productosData = [
         categoria: "Accesorios",
         precio: 19990,
         imagen: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=400&q=80",
-        descripcion: "Base de aluminio con iluminacion RGB personalizable y puertos USB 3.0.",
-        origen: "Fabricacion nacional / Ensamblado en Chile.",
+        descripcion: "Base de aluminio con iluminación RGB personalizable y puertos USB 3.0.",
+        origen: "Fabricación nacional / Ensamblado en Chile.",
         recomendado: true,
         reseñas: []
     },
@@ -45,11 +45,11 @@ const productosData = [
         categoria: "Consolas",
         precio: 529900,
         imagen: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=400&q=80",
-        descripcion: "Consola de ultima generacion con almacenamiento SSD ultra rapido.",
-        origen: "Importado de Japon (Sony Interactive Entertainment).",
+        descripcion: "Consola de ultima generación con almacenamiento SSD ultra rápido.",
+        origen: "Importado de Japón (Sony Interactive Entertainment).",
         recomendado: true,
         reseñas: [
-            { rating: 5, comentario: "Los tiempos de carga son casi instantaneos." }
+            { rating: 5, comentario: "Los tiempos de carga son casi instantáneos." }
         ]
     },
     {
@@ -60,7 +60,7 @@ const productosData = [
         precio: 1199990,
         imagen: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
         descripcion: "Intel Core i7, 32GB RAM DDR5, SSD 1TB, tarjeta de video RTX 4070.",
-        origen: "Ensamblado en Chile por tecnicos de Level-Up Gamer.",
+        origen: "Ensamblado en Chile por técnicos de Level-Up Gamer.",
         recomendado: true,
         reseñas: []
     },
@@ -71,19 +71,19 @@ const productosData = [
         categoria: "Sillas Gamers",
         precio: 189990,
         imagen: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=400&q=80",
-        descripcion: "Respaldo reclinable a 180 grados, cojines lumbares y apoyabrazos 4D.",
-        origen: "Importacion directa. Tela transpirable de alta densidad.",
+        descripcion: "Respaldo reclinable hasta 180 grados, cojines lumbares y apoyabrazos 4D.",
+        origen: "Importación directa. Tela transpirable de alta densidad.",
         recomendado: false,
         reseñas: []
     },
     {
         id: "MS001",
         codigo: "MS001",
-        nombre: "Mouse Inalambrico Hero 25K",
+        nombre: "Mouse Inalámbrico Hero 25K",
         categoria: "Mouse",
         precio: 49990,
         imagen: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=400&q=80",
-        descripcion: "Sensor optico de alta precision con hasta 25.600 DPI.",
+        descripcion: "Sensor óptico de alta precisión con hasta 25.600 DPI.",
         origen: "Importado de EE. UU.",
         recomendado: true,
         reseñas: []
@@ -96,7 +96,7 @@ const productosData = [
         precio: 15990,
         imagen: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
         descripcion: "Superficie de microtextura antideslizante de 900x400mm.",
-        origen: "Fabricacion nacional con costura reforzada.",
+        origen: "Fabricación nacional con costura reforzada.",
         recomendado: false,
         reseñas: []
     },
@@ -107,8 +107,8 @@ const productosData = [
         categoria: "Poleras Personalizadas",
         precio: 14990,
         imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80",
-        descripcion: "Polera 100% algodon con estampado reflectante de la comunidad.",
-        origen: "Disenada y confeccionada localmente en Chile.",
+        descripcion: "Polera 100% algodón con estampado reflectante de la comunidad.",
+        origen: "Diseñada y confeccionada en Chile.",
         recomendado: true,
         reseñas: []
     }
@@ -224,7 +224,7 @@ function agregarAlCarrito(productoId) {
     }
 
     actualizarCarrito();
-    alert(`${prod.nombre} fue anadido al carrito.`);
+    alert(`${prod.nombre} fue añadido al carrito.`);
 }
 
 function actualizarCarrito() {
@@ -344,8 +344,8 @@ function inicializarMapaEventos() {
 
     const eventos = [
         { cdn: [-33.4489, -70.6693], titulo: "Sede Santiago: Torneo Esports Duoc UC", fecha: "15 de Octubre, 2026" },
-        { cdn: [-33.0472, -71.6127], titulo: "Sede Valparaiso: GameFest LevelUp", fecha: "22 de Octubre, 2026" },
-        { cdn: [-36.8201, -73.0444], titulo: "Sede Concepcion: Arena Gamer Sur", fecha: "05 de Noviembre, 2026" }
+        { cdn: [-33.0472, -71.6127], titulo: "Sede Valparaíso: GameFest LevelUp", fecha: "22 de Octubre, 2026" },
+        { cdn: [-36.8201, -73.0444], titulo: "Sede Concepción: Arena Gamer Sur", fecha: "05 de Noviembre, 2026" }
     ];
 
     eventos.forEach(e => {
@@ -364,9 +364,9 @@ function inicializarFormularios() {
         const correo = document.getElementById("correo").value;
         const nombre = document.getElementById("nombre").value;
 
-        if (correo.endsWith("@duoc.cl") || correo.endsWith("@profesor.duoc.cl")) {
+        if (correo.endsWith("@duocuc.cl") || correo.endsWith("@profesor.duoc.cl")) {
             esEstudianteDuoc = true;
-            alert(`Bienvenido ${nombre}. Se ha verificado tu correo institucional. Obtienes 20% de descuento automatico en tus compras.`);
+            alert(`Bienvenido ${nombre}. Se ha verificado tu correo institucional. Obtienes un 20% de descuento automático en tus compras.`);
         } else {
             esEstudianteDuoc = false;
             alert(`Bienvenido ${nombre}. Tu cuenta fue creada exitosamente.`);
