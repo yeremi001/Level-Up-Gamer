@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Level-Up Gamer</title>
+    <link rel="stylesheet" href="../estilo/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../estilo/logo.png" alt="Logo Level-Up Gamer">
+            <h1>LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="admin-productos.html" class="active">Admin</a></li>
+                <li><a href="login.html">Salir (Logout)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 class="brand-font">MANTENEDOR DE PRODUCTOS (CRUD)</h2>
+            <form id="form-admin-producto">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="admin-id">Código del Producto (Ej: JM003): *</label>
+                        <input type="text" id="admin-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-categoria">Categoría: *</label>
+                        <select id="admin-categoria" required>
+                            <option value="Juegos de Mesa">Juegos de Mesa</option>
+                            <option value="Accesorios">Accesorios</option>
+                            <option value="Consolas">Consolas</option>
+                            <option value="Computadores Gamers">Computadores Gamers</option>
+                            <option value="Sillas Gamers">Sillas Gamers</option>
+                            <option value="Mouse">Mouse</option>
+                            <option value="Mousepad">Mousepad</option>
+                            <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="admin-nombre">Nombre del Producto: *</label>
+                        <input type="text" id="admin-nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-precio">Precio (CLP): *</label>
+                        <input type="number" id="admin-precio" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-descripcion">Descripción: *</label>
+                    <textarea id="admin-descripcion" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="background-color: #1E90FF; color: white;">GUARDAR PRODUCTO</button>
+            </form>
+        </section>
+
+        <section class="content-card" style="margin-top: 2rem;">
+            <h2 class="brand-font">INVENTARIO ACTUAL</h2>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #39FF14;">
+                            <th style="padding: 10px;">Código</th>
+                            <th style="padding: 10px;">Categoría</th>
+                            <th style="padding: 10px;">Nombre</th>
+                            <th style="padding: 10px;">Precio</th>
+                            <th style="padding: 10px;">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-admin-body">
+                        <!-- Llenado dinámico vía JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Level-Up Gamer - Panel de Administración</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

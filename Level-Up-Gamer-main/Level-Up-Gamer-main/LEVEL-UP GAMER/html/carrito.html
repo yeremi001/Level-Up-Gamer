@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Level-Up Gamer</title>
+    <link rel="stylesheet" href="../estilo/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../estilo/logo.png" alt="Logo Level-Up Gamer">
+            <h1>LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="admin-productos.html">Admin</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrito.html" class="active">🛒 Carrito (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-card">
+            <h2 class="brand-font">TU CARRITO DE COMPRAS</h2>
+            
+            <div style="overflow-x: auto; margin-top: 1.5rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #1E90FF;">
+                            <th style="padding: 10px;">Producto</th>
+                            <th style="padding: 10px;">Precio Un.</th>
+                            <th style="padding: 10px;">Cantidad</th>
+                            <th style="padding: 10px;">Subtotal</th>
+                            <th style="padding: 10px;">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carrito-body">
+                        <!-- Renderizado dinámico -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: right; margin-top: 2rem;">
+                <h3 class="brand-font" style="color: #39FF14;">Total: <span id="carrito-total">$0 CLP</span></h3>
+                <button onclick="vaciarCarrito()" class="btn-primary" style="background-color: #ff4d4d; width: auto; margin-top: 1rem;">VACIAR CARRITO</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Level-Up Gamer</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

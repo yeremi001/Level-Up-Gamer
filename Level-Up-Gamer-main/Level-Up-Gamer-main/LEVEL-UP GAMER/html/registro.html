@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Level-Up Gamer</title>
+    <link rel="stylesheet" href="../estilo/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../estilo/logo.png" alt="Logo Level-Up Gamer">
+            <h1>LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html" class="active">Registro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrito.html">🛒 Carrito (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 class="brand-font">REGISTRO DE JUGADOR (+18)</h2>
+            <form id="form-registro" novalidate>
+                <div class="form-group">
+                    <label for="run">RUN (Sin puntos ni guion): *</label>
+                    <input type="text" id="run" maxlength="9" placeholder="19011022K" required>
+                    <span class="error-msg"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre: *</label>
+                        <input type="text" id="nombre" maxlength="50" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos: *</label>
+                        <input type="text" id="apellidos" maxlength="100" required>
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico (Solo Duoc o Gmail): *</label>
+                        <input type="email" id="correo" maxlength="100" placeholder="jugador@duoc.cl" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento: *</label>
+                        <input type="date" id="fechaNacimiento" required>
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="region">Región: *</label>
+                        <select id="region" required>
+                            <option value="">Seleccione Región</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comuna">Comuna: *</label>
+                        <select id="comuna" required disabled>
+                            <option value="">Seleccione Comuna</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección de Despacho: *</label>
+                    <input type="text" id="direccion" maxlength="300" required>
+                    <span class="error-msg"></span>
+                </div>
+
+                <button type="submit" class="btn-primary">CREAR CUENTA</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Level-Up Gamer - Tu tienda online</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

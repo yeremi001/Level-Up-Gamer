@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --bg-dark: #000000;
+  --bg-card: #0a0a0a;
+  --blue-electric: #1E90FF;
+  --green-neon: #39FF14;
+  --text-main: #FFFFFF;
+  --text-muted: #D3D3D3;
+  --error-color: #ff4d4d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Semántica: Header y Nav */
+header {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--blue-electric);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+  color: var(--text-main);
+}
+
+.logo span {
+  color: var(--green-neon);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #000;
+  background-color: var(--green-neon);
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--green-neon);
+}
+
+/* Semántica: Main y Sections */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+  border: 1px solid var(--blue-electric);
+  padding: 3rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.hero-banner h2 {
+  color: var(--green-neon);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Formularios */
+.form-section, .content-card {
+  background: var(--bg-card);
+  border: 1px solid #333;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--green-neon);
+  font-size: 0.85rem;
+}
+
+input, select, textarea {
+  padding: 0.75rem;
+  background-color: #121212;
+  border: 1px solid var(--blue-electric);
+  color: var(--text-main);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--green-neon);
+  box-shadow: 0 0 5px var(--green-neon);
+}
+
+.error-msg {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.input-error {
+  border-color: var(--error-color) !important;
+}
+
+/* Botones */
+.btn-primary {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--green-neon);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2bc80f;
+  box-shadow: 0 0 12px var(--green-neon);
+}
+
+/* Grid y Tarjetas de Producto */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #0d0d0d;
+  border: 1px solid var(--blue-electric);
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+}
+
+.card h3 { 
+    color: #FFF; 
+    font-size: 1.1rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.card p { 
+    color: var(--text-muted); 
+    font-size: 0.88rem; 
+}
+
+.precio { 
+    font-size: 1.3rem; 
+    color: var(--green-neon); 
+    font-weight: bold; 
+    margin: 0.8rem 0; 
+}
+
+/* Semántica: Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--bg-card);
+  border-top: 1px solid #222;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  header { flex-direction: column; text-align: center; gap: 1rem; }
+}

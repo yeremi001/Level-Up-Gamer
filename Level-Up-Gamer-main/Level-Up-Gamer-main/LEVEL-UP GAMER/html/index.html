@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up Gamer - Inicio</title>
+    <!-- Conexión a la carpeta estilo -->
+    <link rel="stylesheet" href="../estilo/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../estilo/logo.png" alt="Logo Level-Up Gamer">
+            <h1>LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <!-- Menú de las páginas -->
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="admin-productos.html">Admin</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrito.html">🛒 Carrito (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <h2>¡DESAFÍA TUS LÍMITES!</h2>
+            <p>Equipamiento de alto rendimiento, consolas y accesorios con despacho a todo Chile.</p>
+        </section>
+
+        <!--Filtros -->
+        <section class="content-card" style="margin-bottom: 2rem;">
+            <h3 class="brand-font">NUESTRO CATÁLOGO</h3>
+            
+            <div class="form-row" style="margin-top: 1.5rem;">
+                <div class="form-group">
+                    <label for="filtro-categoria">Filtrar por Categoría:</label>
+                    <select id="filtro-categoria">
+                        <option value="">Todas las Categorías</option>
+                        <option value="Juegos de Mesa">Juegos de Mesa</option>
+                        <option value="Accesorios">Accesorios</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Computadores Gamers">Computadores Gamers</option>
+                        <option value="Sillas Gamers">Sillas Gamers</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Mousepad">Mousepad</option>
+                        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-nombre">Buscar Producto:</label>
+                    <input type="text" id="filtro-nombre" placeholder="Ej: Catan, PlayStation...">
+                </div>
+            </div>
+        </section>
+
+        <div id="destacados-grid" class="product-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Level-Up Gamer - Evaluación Parcial N° 1 Fullstack II</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

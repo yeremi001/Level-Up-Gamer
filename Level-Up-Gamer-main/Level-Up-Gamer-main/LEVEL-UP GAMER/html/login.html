@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Level-Up Gamer</title>
+    <link rel="stylesheet" href="../estilo/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../estilo/logo.png" alt="Logo Level-Up Gamer">
+            <h1>LEVEL-UP <span>GAMER</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="carrito.html">🛒 Carrito (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 500px;">
+        <section class="form-section">
+            <h2 class="brand-font">INICIAR SESIÓN</h2>
+            <form id="form-login" novalidate>
+                <div class="form-group">
+                    <label for="login-correo">Correo Electrónico (RFC2822): *</label>
+                    <input type="email" id="login-correo" maxlength="100" required>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña: *</label>
+                    <input type="password" id="login-pass" maxlength="10" required>
+                    <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn-primary">INGRESAR</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Level-Up Gamer</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
